@@ -1,0 +1,1753 @@
+ERROR - 2025-12-02 14:37:52 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in C:\laragon\www\mynews\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\laragon\www\mynews\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', '', Object(SensitiveParameterValue), '', 3306, '', 0)
+#1 C:\laragon\www\mynews\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\laragon\www\mynews\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\laragon\www\mynews\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\laragon\www\mynews\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\mynews\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('kevin@gmail.com', 'member.email', Array)
+#6 C:\laragon\www\mynews\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('kevin@gmail.com', 'member.email', Array, NULL, 'email')
+#7 C:\laragon\www\mynews\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'kevin@gmail.com', Array, Array, 'email')
+#8 C:\laragon\www\mynews\system\Controller.php(138): CodeIgniter\Validation\Validation->run()
+#9 C:\laragon\www\mynews\app\Controllers\AuthController.php(26): CodeIgniter\Controller->validate(Array)
+#10 C:\laragon\www\mynews\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#11 C:\laragon\www\mynews\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#12 C:\laragon\www\mynews\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\laragon\www\mynews\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#14 C:\laragon\www\mynews\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#15 C:\laragon\www\mynews\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#16 C:\laragon\www\mynews\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#17 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: NO) in C:\laragon\www\mynews\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\laragon\www\mynews\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\laragon\www\mynews\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\laragon\www\mynews\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 C:\laragon\www\mynews\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\laragon\www\mynews\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('kevin@gmail.com', 'member.email', Array)
+#5 C:\laragon\www\mynews\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('kevin@gmail.com', 'member.email', Array, NULL, 'email')
+#6 C:\laragon\www\mynews\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'kevin@gmail.com', Array, Array, 'email')
+#7 C:\laragon\www\mynews\system\Controller.php(138): CodeIgniter\Validation\Validation->run()
+#8 C:\laragon\www\mynews\app\Controllers\AuthController.php(26): CodeIgniter\Controller->validate(Array)
+#9 C:\laragon\www\mynews\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#10 C:\laragon\www\mynews\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#11 C:\laragon\www\mynews\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\laragon\www\mynews\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\laragon\www\mynews\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\laragon\www\mynews\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\laragon\www\mynews\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#16 {main}
+CRITICAL - 2025-12-02 14:37:52 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user ''@'localhost' (using password: NO)
+[Method: POST, Route: api/registrasi]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `member`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('kevin@gmail.com', 'member.email', [...])
+ 5 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('kevin@gmail.com', 'member.email', [...], null, 'email')
+ 6 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'kevin@gmail.com', [...], [...], 'email')
+ 7 SYSTEMPATH\Controller.php(138): CodeIgniter\Validation\Validation->run()
+ 8 APPPATH\Controllers\AuthController.php(26): CodeIgniter\Controller->validate([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\mynews\\public\\index.php')
+ERROR - 2025-12-02 14:38:04 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in C:\laragon\www\mynews\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\laragon\www\mynews\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', '', Object(SensitiveParameterValue), '', 3306, '', 0)
+#1 C:\laragon\www\mynews\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\laragon\www\mynews\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\laragon\www\mynews\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\laragon\www\mynews\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\mynews\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('kevin10@gmail.c...', 'member.email', Array)
+#6 C:\laragon\www\mynews\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('kevin10@gmail.c...', 'member.email', Array, NULL, 'email')
+#7 C:\laragon\www\mynews\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'kevin10@gmail.c...', Array, Array, 'email')
+#8 C:\laragon\www\mynews\system\Controller.php(138): CodeIgniter\Validation\Validation->run()
+#9 C:\laragon\www\mynews\app\Controllers\AuthController.php(26): CodeIgniter\Controller->validate(Array)
+#10 C:\laragon\www\mynews\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#11 C:\laragon\www\mynews\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#12 C:\laragon\www\mynews\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\laragon\www\mynews\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#14 C:\laragon\www\mynews\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#15 C:\laragon\www\mynews\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#16 C:\laragon\www\mynews\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#17 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: NO) in C:\laragon\www\mynews\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\laragon\www\mynews\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\laragon\www\mynews\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\laragon\www\mynews\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 C:\laragon\www\mynews\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\laragon\www\mynews\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('kevin10@gmail.c...', 'member.email', Array)
+#5 C:\laragon\www\mynews\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('kevin10@gmail.c...', 'member.email', Array, NULL, 'email')
+#6 C:\laragon\www\mynews\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'kevin10@gmail.c...', Array, Array, 'email')
+#7 C:\laragon\www\mynews\system\Controller.php(138): CodeIgniter\Validation\Validation->run()
+#8 C:\laragon\www\mynews\app\Controllers\AuthController.php(26): CodeIgniter\Controller->validate(Array)
+#9 C:\laragon\www\mynews\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#10 C:\laragon\www\mynews\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#11 C:\laragon\www\mynews\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\laragon\www\mynews\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\laragon\www\mynews\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\laragon\www\mynews\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\laragon\www\mynews\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#16 {main}
+CRITICAL - 2025-12-02 14:38:04 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user ''@'localhost' (using password: NO)
+[Method: POST, Route: api/registrasi]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `member`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('kevin10@gmail.com', 'member.email', [...])
+ 5 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('kevin10@gmail.com', 'member.email', [...], null, 'email')
+ 6 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'kevin10@gmail.com', [...], [...], 'email')
+ 7 SYSTEMPATH\Controller.php(138): CodeIgniter\Validation\Validation->run()
+ 8 APPPATH\Controllers\AuthController.php(26): CodeIgniter\Controller->validate([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\mynews\\public\\index.php')
+ERROR - 2025-12-02 14:38:06 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in C:\laragon\www\mynews\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\laragon\www\mynews\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', '', Object(SensitiveParameterValue), '', 3306, '', 0)
+#1 C:\laragon\www\mynews\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\laragon\www\mynews\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\laragon\www\mynews\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\laragon\www\mynews\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\mynews\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('kevin10@gmail.c...', 'member.email', Array)
+#6 C:\laragon\www\mynews\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('kevin10@gmail.c...', 'member.email', Array, NULL, 'email')
+#7 C:\laragon\www\mynews\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'kevin10@gmail.c...', Array, Array, 'email')
+#8 C:\laragon\www\mynews\system\Controller.php(138): CodeIgniter\Validation\Validation->run()
+#9 C:\laragon\www\mynews\app\Controllers\AuthController.php(26): CodeIgniter\Controller->validate(Array)
+#10 C:\laragon\www\mynews\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#11 C:\laragon\www\mynews\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#12 C:\laragon\www\mynews\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\laragon\www\mynews\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#14 C:\laragon\www\mynews\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#15 C:\laragon\www\mynews\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#16 C:\laragon\www\mynews\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#17 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: NO) in C:\laragon\www\mynews\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\laragon\www\mynews\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\laragon\www\mynews\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\laragon\www\mynews\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 C:\laragon\www\mynews\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\laragon\www\mynews\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('kevin10@gmail.c...', 'member.email', Array)
+#5 C:\laragon\www\mynews\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('kevin10@gmail.c...', 'member.email', Array, NULL, 'email')
+#6 C:\laragon\www\mynews\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'kevin10@gmail.c...', Array, Array, 'email')
+#7 C:\laragon\www\mynews\system\Controller.php(138): CodeIgniter\Validation\Validation->run()
+#8 C:\laragon\www\mynews\app\Controllers\AuthController.php(26): CodeIgniter\Controller->validate(Array)
+#9 C:\laragon\www\mynews\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#10 C:\laragon\www\mynews\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#11 C:\laragon\www\mynews\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\laragon\www\mynews\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\laragon\www\mynews\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\laragon\www\mynews\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\laragon\www\mynews\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#16 {main}
+CRITICAL - 2025-12-02 14:38:06 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user ''@'localhost' (using password: NO)
+[Method: POST, Route: api/registrasi]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `member`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('kevin10@gmail.com', 'member.email', [...])
+ 5 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('kevin10@gmail.com', 'member.email', [...], null, 'email')
+ 6 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'kevin10@gmail.com', [...], [...], 'email')
+ 7 SYSTEMPATH\Controller.php(138): CodeIgniter\Validation\Validation->run()
+ 8 APPPATH\Controllers\AuthController.php(26): CodeIgniter\Controller->validate([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\mynews\\public\\index.php')
+ERROR - 2025-12-02 14:38:34 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in C:\laragon\www\mynews\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\laragon\www\mynews\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', '', Object(SensitiveParameterValue), '', 3306, '', 0)
+#1 C:\laragon\www\mynews\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\laragon\www\mynews\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\laragon\www\mynews\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\laragon\www\mynews\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\mynews\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('kevin10@gmail.c...', 'member.email', Array)
+#6 C:\laragon\www\mynews\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('kevin10@gmail.c...', 'member.email', Array, NULL, 'email')
+#7 C:\laragon\www\mynews\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'kevin10@gmail.c...', Array, Array, 'email')
+#8 C:\laragon\www\mynews\system\Controller.php(138): CodeIgniter\Validation\Validation->run()
+#9 C:\laragon\www\mynews\app\Controllers\AuthController.php(26): CodeIgniter\Controller->validate(Array)
+#10 C:\laragon\www\mynews\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#11 C:\laragon\www\mynews\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#12 C:\laragon\www\mynews\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\laragon\www\mynews\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#14 C:\laragon\www\mynews\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#15 C:\laragon\www\mynews\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#16 C:\laragon\www\mynews\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#17 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: NO) in C:\laragon\www\mynews\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\laragon\www\mynews\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\laragon\www\mynews\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\laragon\www\mynews\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 C:\laragon\www\mynews\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\laragon\www\mynews\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('kevin10@gmail.c...', 'member.email', Array)
+#5 C:\laragon\www\mynews\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('kevin10@gmail.c...', 'member.email', Array, NULL, 'email')
+#6 C:\laragon\www\mynews\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'kevin10@gmail.c...', Array, Array, 'email')
+#7 C:\laragon\www\mynews\system\Controller.php(138): CodeIgniter\Validation\Validation->run()
+#8 C:\laragon\www\mynews\app\Controllers\AuthController.php(26): CodeIgniter\Controller->validate(Array)
+#9 C:\laragon\www\mynews\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#10 C:\laragon\www\mynews\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#11 C:\laragon\www\mynews\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\laragon\www\mynews\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\laragon\www\mynews\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\laragon\www\mynews\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\laragon\www\mynews\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#16 {main}
+CRITICAL - 2025-12-02 14:38:34 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user ''@'localhost' (using password: NO)
+[Method: POST, Route: api/registrasi]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `member`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('kevin10@gmail.com', 'member.email', [...])
+ 5 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('kevin10@gmail.com', 'member.email', [...], null, 'email')
+ 6 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'kevin10@gmail.com', [...], [...], 'email')
+ 7 SYSTEMPATH\Controller.php(138): CodeIgniter\Validation\Validation->run()
+ 8 APPPATH\Controllers\AuthController.php(26): CodeIgniter\Controller->validate([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\mynews\\public\\index.php')
+ERROR - 2025-12-02 14:38:37 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in C:\laragon\www\mynews\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\laragon\www\mynews\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', '', Object(SensitiveParameterValue), '', 3306, '', 0)
+#1 C:\laragon\www\mynews\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\laragon\www\mynews\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\laragon\www\mynews\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\laragon\www\mynews\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\mynews\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('kevin10@gmail.c...', 'member.email', Array)
+#6 C:\laragon\www\mynews\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('kevin10@gmail.c...', 'member.email', Array, NULL, 'email')
+#7 C:\laragon\www\mynews\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'kevin10@gmail.c...', Array, Array, 'email')
+#8 C:\laragon\www\mynews\system\Controller.php(138): CodeIgniter\Validation\Validation->run()
+#9 C:\laragon\www\mynews\app\Controllers\AuthController.php(26): CodeIgniter\Controller->validate(Array)
+#10 C:\laragon\www\mynews\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#11 C:\laragon\www\mynews\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#12 C:\laragon\www\mynews\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\laragon\www\mynews\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#14 C:\laragon\www\mynews\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#15 C:\laragon\www\mynews\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#16 C:\laragon\www\mynews\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#17 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: NO) in C:\laragon\www\mynews\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\laragon\www\mynews\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\laragon\www\mynews\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\laragon\www\mynews\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 C:\laragon\www\mynews\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\laragon\www\mynews\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('kevin10@gmail.c...', 'member.email', Array)
+#5 C:\laragon\www\mynews\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('kevin10@gmail.c...', 'member.email', Array, NULL, 'email')
+#6 C:\laragon\www\mynews\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'kevin10@gmail.c...', Array, Array, 'email')
+#7 C:\laragon\www\mynews\system\Controller.php(138): CodeIgniter\Validation\Validation->run()
+#8 C:\laragon\www\mynews\app\Controllers\AuthController.php(26): CodeIgniter\Controller->validate(Array)
+#9 C:\laragon\www\mynews\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#10 C:\laragon\www\mynews\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#11 C:\laragon\www\mynews\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\laragon\www\mynews\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\laragon\www\mynews\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\laragon\www\mynews\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\laragon\www\mynews\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#16 {main}
+CRITICAL - 2025-12-02 14:38:37 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user ''@'localhost' (using password: NO)
+[Method: POST, Route: api/registrasi]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `member`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('kevin10@gmail.com', 'member.email', [...])
+ 5 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('kevin10@gmail.com', 'member.email', [...], null, 'email')
+ 6 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'kevin10@gmail.com', [...], [...], 'email')
+ 7 SYSTEMPATH\Controller.php(138): CodeIgniter\Validation\Validation->run()
+ 8 APPPATH\Controllers\AuthController.php(26): CodeIgniter\Controller->validate([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\mynews\\public\\index.php')
+ERROR - 2025-12-02 14:38:46 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in C:\laragon\www\mynews\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\laragon\www\mynews\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', '', Object(SensitiveParameterValue), '', 3306, '', 0)
+#1 C:\laragon\www\mynews\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\laragon\www\mynews\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\laragon\www\mynews\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\laragon\www\mynews\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\mynews\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('kevin10@gmail.c...', 'member.email', Array)
+#6 C:\laragon\www\mynews\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('kevin10@gmail.c...', 'member.email', Array, NULL, 'email')
+#7 C:\laragon\www\mynews\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'kevin10@gmail.c...', Array, Array, 'email')
+#8 C:\laragon\www\mynews\system\Controller.php(138): CodeIgniter\Validation\Validation->run()
+#9 C:\laragon\www\mynews\app\Controllers\AuthController.php(26): CodeIgniter\Controller->validate(Array)
+#10 C:\laragon\www\mynews\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#11 C:\laragon\www\mynews\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#12 C:\laragon\www\mynews\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\laragon\www\mynews\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#14 C:\laragon\www\mynews\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#15 C:\laragon\www\mynews\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#16 C:\laragon\www\mynews\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#17 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: NO) in C:\laragon\www\mynews\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\laragon\www\mynews\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\laragon\www\mynews\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\laragon\www\mynews\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 C:\laragon\www\mynews\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\laragon\www\mynews\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('kevin10@gmail.c...', 'member.email', Array)
+#5 C:\laragon\www\mynews\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('kevin10@gmail.c...', 'member.email', Array, NULL, 'email')
+#6 C:\laragon\www\mynews\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'kevin10@gmail.c...', Array, Array, 'email')
+#7 C:\laragon\www\mynews\system\Controller.php(138): CodeIgniter\Validation\Validation->run()
+#8 C:\laragon\www\mynews\app\Controllers\AuthController.php(26): CodeIgniter\Controller->validate(Array)
+#9 C:\laragon\www\mynews\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#10 C:\laragon\www\mynews\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#11 C:\laragon\www\mynews\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\laragon\www\mynews\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\laragon\www\mynews\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\laragon\www\mynews\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\laragon\www\mynews\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#16 {main}
+CRITICAL - 2025-12-02 14:38:46 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user ''@'localhost' (using password: NO)
+[Method: POST, Route: api/registrasi]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `member`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('kevin10@gmail.com', 'member.email', [...])
+ 5 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('kevin10@gmail.com', 'member.email', [...], null, 'email')
+ 6 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'kevin10@gmail.com', [...], [...], 'email')
+ 7 SYSTEMPATH\Controller.php(138): CodeIgniter\Validation\Validation->run()
+ 8 APPPATH\Controllers\AuthController.php(26): CodeIgniter\Controller->validate([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\mynews\\public\\index.php')
+ERROR - 2025-12-02 14:43:19 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in C:\laragon\www\mynews\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\laragon\www\mynews\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', '', Object(SensitiveParameterValue), '', 3306, '', 0)
+#1 C:\laragon\www\mynews\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\laragon\www\mynews\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\laragon\www\mynews\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\laragon\www\mynews\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\mynews\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('kevin10@gmail.c...', 'member.email', Array)
+#6 C:\laragon\www\mynews\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('kevin10@gmail.c...', 'member.email', Array, NULL, 'email')
+#7 C:\laragon\www\mynews\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'kevin10@gmail.c...', Array, Array, 'email')
+#8 C:\laragon\www\mynews\system\Controller.php(138): CodeIgniter\Validation\Validation->run()
+#9 C:\laragon\www\mynews\app\Controllers\AuthController.php(26): CodeIgniter\Controller->validate(Array)
+#10 C:\laragon\www\mynews\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#11 C:\laragon\www\mynews\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#12 C:\laragon\www\mynews\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\laragon\www\mynews\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#14 C:\laragon\www\mynews\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#15 C:\laragon\www\mynews\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#16 C:\laragon\www\mynews\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#17 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: NO) in C:\laragon\www\mynews\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\laragon\www\mynews\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\laragon\www\mynews\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\laragon\www\mynews\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 C:\laragon\www\mynews\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\laragon\www\mynews\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('kevin10@gmail.c...', 'member.email', Array)
+#5 C:\laragon\www\mynews\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('kevin10@gmail.c...', 'member.email', Array, NULL, 'email')
+#6 C:\laragon\www\mynews\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'kevin10@gmail.c...', Array, Array, 'email')
+#7 C:\laragon\www\mynews\system\Controller.php(138): CodeIgniter\Validation\Validation->run()
+#8 C:\laragon\www\mynews\app\Controllers\AuthController.php(26): CodeIgniter\Controller->validate(Array)
+#9 C:\laragon\www\mynews\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#10 C:\laragon\www\mynews\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#11 C:\laragon\www\mynews\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\laragon\www\mynews\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\laragon\www\mynews\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\laragon\www\mynews\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\laragon\www\mynews\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#16 {main}
+CRITICAL - 2025-12-02 14:43:19 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user ''@'localhost' (using password: NO)
+[Method: POST, Route: api/registrasi]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `member`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('kevin10@gmail.com', 'member.email', [...])
+ 5 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('kevin10@gmail.com', 'member.email', [...], null, 'email')
+ 6 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'kevin10@gmail.com', [...], [...], 'email')
+ 7 SYSTEMPATH\Controller.php(138): CodeIgniter\Validation\Validation->run()
+ 8 APPPATH\Controllers\AuthController.php(26): CodeIgniter\Controller->validate([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\mynews\\public\\index.php')
+ERROR - 2025-12-02 15:05:38 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in C:\laragon\www\mynews\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\laragon\www\mynews\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', '', Object(SensitiveParameterValue), '', 3306, '', 0)
+#1 C:\laragon\www\mynews\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\laragon\www\mynews\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\laragon\www\mynews\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\laragon\www\mynews\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\mynews\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('sss@gmail.com', 'member.email', Array)
+#6 C:\laragon\www\mynews\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('sss@gmail.com', 'member.email', Array, NULL, 'email')
+#7 C:\laragon\www\mynews\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'sss@gmail.com', Array, Array, 'email')
+#8 C:\laragon\www\mynews\system\Controller.php(138): CodeIgniter\Validation\Validation->run()
+#9 C:\laragon\www\mynews\app\Controllers\AuthController.php(26): CodeIgniter\Controller->validate(Array)
+#10 C:\laragon\www\mynews\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#11 C:\laragon\www\mynews\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#12 C:\laragon\www\mynews\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\laragon\www\mynews\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#14 C:\laragon\www\mynews\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#15 C:\laragon\www\mynews\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#16 C:\laragon\www\mynews\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#17 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: NO) in C:\laragon\www\mynews\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\laragon\www\mynews\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\laragon\www\mynews\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\laragon\www\mynews\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 C:\laragon\www\mynews\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\laragon\www\mynews\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('sss@gmail.com', 'member.email', Array)
+#5 C:\laragon\www\mynews\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('sss@gmail.com', 'member.email', Array, NULL, 'email')
+#6 C:\laragon\www\mynews\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'sss@gmail.com', Array, Array, 'email')
+#7 C:\laragon\www\mynews\system\Controller.php(138): CodeIgniter\Validation\Validation->run()
+#8 C:\laragon\www\mynews\app\Controllers\AuthController.php(26): CodeIgniter\Controller->validate(Array)
+#9 C:\laragon\www\mynews\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#10 C:\laragon\www\mynews\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#11 C:\laragon\www\mynews\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\laragon\www\mynews\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\laragon\www\mynews\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\laragon\www\mynews\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\laragon\www\mynews\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#16 {main}
+CRITICAL - 2025-12-02 15:05:38 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user ''@'localhost' (using password: NO)
+[Method: POST, Route: api/registrasi]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `member`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('sss@gmail.com', 'member.email', [...])
+ 5 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('sss@gmail.com', 'member.email', [...], null, 'email')
+ 6 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'sss@gmail.com', [...], [...], 'email')
+ 7 SYSTEMPATH\Controller.php(138): CodeIgniter\Validation\Validation->run()
+ 8 APPPATH\Controllers\AuthController.php(26): CodeIgniter\Controller->validate([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\mynews\\public\\index.php')
+ERROR - 2025-12-02 15:08:17 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in C:\laragon\www\mynews\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\laragon\www\mynews\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', '', Object(SensitiveParameterValue), '', 3306, '', 0)
+#1 C:\laragon\www\mynews\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\laragon\www\mynews\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\laragon\www\mynews\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\laragon\www\mynews\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\mynews\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('sss@gmail.com', 'member.email', Array)
+#6 C:\laragon\www\mynews\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('sss@gmail.com', 'member.email', Array, NULL, 'email')
+#7 C:\laragon\www\mynews\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'sss@gmail.com', Array, Array, 'email')
+#8 C:\laragon\www\mynews\system\Controller.php(138): CodeIgniter\Validation\Validation->run()
+#9 C:\laragon\www\mynews\app\Controllers\AuthController.php(26): CodeIgniter\Controller->validate(Array)
+#10 C:\laragon\www\mynews\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#11 C:\laragon\www\mynews\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#12 C:\laragon\www\mynews\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\laragon\www\mynews\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#14 C:\laragon\www\mynews\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#15 C:\laragon\www\mynews\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#16 C:\laragon\www\mynews\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#17 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: NO) in C:\laragon\www\mynews\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\laragon\www\mynews\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\laragon\www\mynews\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\laragon\www\mynews\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 C:\laragon\www\mynews\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\laragon\www\mynews\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('sss@gmail.com', 'member.email', Array)
+#5 C:\laragon\www\mynews\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('sss@gmail.com', 'member.email', Array, NULL, 'email')
+#6 C:\laragon\www\mynews\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'sss@gmail.com', Array, Array, 'email')
+#7 C:\laragon\www\mynews\system\Controller.php(138): CodeIgniter\Validation\Validation->run()
+#8 C:\laragon\www\mynews\app\Controllers\AuthController.php(26): CodeIgniter\Controller->validate(Array)
+#9 C:\laragon\www\mynews\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#10 C:\laragon\www\mynews\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#11 C:\laragon\www\mynews\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\laragon\www\mynews\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\laragon\www\mynews\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\laragon\www\mynews\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\laragon\www\mynews\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#16 {main}
+CRITICAL - 2025-12-02 15:08:17 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user ''@'localhost' (using password: NO)
+[Method: POST, Route: api/registrasi]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `member`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('sss@gmail.com', 'member.email', [...])
+ 5 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('sss@gmail.com', 'member.email', [...], null, 'email')
+ 6 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'sss@gmail.com', [...], [...], 'email')
+ 7 SYSTEMPATH\Controller.php(138): CodeIgniter\Validation\Validation->run()
+ 8 APPPATH\Controllers\AuthController.php(26): CodeIgniter\Controller->validate([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\mynews\\public\\index.php')
+ERROR - 2025-12-02 15:08:19 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in C:\laragon\www\mynews\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\laragon\www\mynews\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', '', Object(SensitiveParameterValue), '', 3306, '', 0)
+#1 C:\laragon\www\mynews\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\laragon\www\mynews\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\laragon\www\mynews\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\laragon\www\mynews\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\mynews\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('sss@gmail.com', 'member.email', Array)
+#6 C:\laragon\www\mynews\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('sss@gmail.com', 'member.email', Array, NULL, 'email')
+#7 C:\laragon\www\mynews\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'sss@gmail.com', Array, Array, 'email')
+#8 C:\laragon\www\mynews\system\Controller.php(138): CodeIgniter\Validation\Validation->run()
+#9 C:\laragon\www\mynews\app\Controllers\AuthController.php(26): CodeIgniter\Controller->validate(Array)
+#10 C:\laragon\www\mynews\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#11 C:\laragon\www\mynews\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#12 C:\laragon\www\mynews\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\laragon\www\mynews\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#14 C:\laragon\www\mynews\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#15 C:\laragon\www\mynews\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#16 C:\laragon\www\mynews\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#17 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: NO) in C:\laragon\www\mynews\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\laragon\www\mynews\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\laragon\www\mynews\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\laragon\www\mynews\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 C:\laragon\www\mynews\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\laragon\www\mynews\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('sss@gmail.com', 'member.email', Array)
+#5 C:\laragon\www\mynews\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('sss@gmail.com', 'member.email', Array, NULL, 'email')
+#6 C:\laragon\www\mynews\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'sss@gmail.com', Array, Array, 'email')
+#7 C:\laragon\www\mynews\system\Controller.php(138): CodeIgniter\Validation\Validation->run()
+#8 C:\laragon\www\mynews\app\Controllers\AuthController.php(26): CodeIgniter\Controller->validate(Array)
+#9 C:\laragon\www\mynews\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#10 C:\laragon\www\mynews\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#11 C:\laragon\www\mynews\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\laragon\www\mynews\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\laragon\www\mynews\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\laragon\www\mynews\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\laragon\www\mynews\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#16 {main}
+CRITICAL - 2025-12-02 15:08:19 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user ''@'localhost' (using password: NO)
+[Method: POST, Route: api/registrasi]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `member`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('sss@gmail.com', 'member.email', [...])
+ 5 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('sss@gmail.com', 'member.email', [...], null, 'email')
+ 6 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'sss@gmail.com', [...], [...], 'email')
+ 7 SYSTEMPATH\Controller.php(138): CodeIgniter\Validation\Validation->run()
+ 8 APPPATH\Controllers\AuthController.php(26): CodeIgniter\Controller->validate([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\mynews\\public\\index.php')
+ERROR - 2025-12-02 15:08:20 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in C:\laragon\www\mynews\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\laragon\www\mynews\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', '', Object(SensitiveParameterValue), '', 3306, '', 0)
+#1 C:\laragon\www\mynews\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\laragon\www\mynews\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\laragon\www\mynews\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\laragon\www\mynews\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\mynews\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('sss@gmail.com', 'member.email', Array)
+#6 C:\laragon\www\mynews\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('sss@gmail.com', 'member.email', Array, NULL, 'email')
+#7 C:\laragon\www\mynews\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'sss@gmail.com', Array, Array, 'email')
+#8 C:\laragon\www\mynews\system\Controller.php(138): CodeIgniter\Validation\Validation->run()
+#9 C:\laragon\www\mynews\app\Controllers\AuthController.php(26): CodeIgniter\Controller->validate(Array)
+#10 C:\laragon\www\mynews\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#11 C:\laragon\www\mynews\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#12 C:\laragon\www\mynews\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\laragon\www\mynews\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#14 C:\laragon\www\mynews\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#15 C:\laragon\www\mynews\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#16 C:\laragon\www\mynews\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#17 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: NO) in C:\laragon\www\mynews\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\laragon\www\mynews\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\laragon\www\mynews\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\laragon\www\mynews\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 C:\laragon\www\mynews\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\laragon\www\mynews\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('sss@gmail.com', 'member.email', Array)
+#5 C:\laragon\www\mynews\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('sss@gmail.com', 'member.email', Array, NULL, 'email')
+#6 C:\laragon\www\mynews\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'sss@gmail.com', Array, Array, 'email')
+#7 C:\laragon\www\mynews\system\Controller.php(138): CodeIgniter\Validation\Validation->run()
+#8 C:\laragon\www\mynews\app\Controllers\AuthController.php(26): CodeIgniter\Controller->validate(Array)
+#9 C:\laragon\www\mynews\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#10 C:\laragon\www\mynews\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#11 C:\laragon\www\mynews\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\laragon\www\mynews\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\laragon\www\mynews\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\laragon\www\mynews\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\laragon\www\mynews\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#16 {main}
+CRITICAL - 2025-12-02 15:08:20 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user ''@'localhost' (using password: NO)
+[Method: POST, Route: api/registrasi]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `member`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('sss@gmail.com', 'member.email', [...])
+ 5 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('sss@gmail.com', 'member.email', [...], null, 'email')
+ 6 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'sss@gmail.com', [...], [...], 'email')
+ 7 SYSTEMPATH\Controller.php(138): CodeIgniter\Validation\Validation->run()
+ 8 APPPATH\Controllers\AuthController.php(26): CodeIgniter\Controller->validate([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\mynews\\public\\index.php')
+ERROR - 2025-12-02 15:08:20 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in C:\laragon\www\mynews\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\laragon\www\mynews\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', '', Object(SensitiveParameterValue), '', 3306, '', 0)
+#1 C:\laragon\www\mynews\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\laragon\www\mynews\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\laragon\www\mynews\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\laragon\www\mynews\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\mynews\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('sss@gmail.com', 'member.email', Array)
+#6 C:\laragon\www\mynews\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('sss@gmail.com', 'member.email', Array, NULL, 'email')
+#7 C:\laragon\www\mynews\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'sss@gmail.com', Array, Array, 'email')
+#8 C:\laragon\www\mynews\system\Controller.php(138): CodeIgniter\Validation\Validation->run()
+#9 C:\laragon\www\mynews\app\Controllers\AuthController.php(26): CodeIgniter\Controller->validate(Array)
+#10 C:\laragon\www\mynews\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#11 C:\laragon\www\mynews\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#12 C:\laragon\www\mynews\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\laragon\www\mynews\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#14 C:\laragon\www\mynews\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#15 C:\laragon\www\mynews\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#16 C:\laragon\www\mynews\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#17 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: NO) in C:\laragon\www\mynews\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\laragon\www\mynews\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\laragon\www\mynews\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\laragon\www\mynews\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 C:\laragon\www\mynews\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\laragon\www\mynews\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('sss@gmail.com', 'member.email', Array)
+#5 C:\laragon\www\mynews\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('sss@gmail.com', 'member.email', Array, NULL, 'email')
+#6 C:\laragon\www\mynews\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'sss@gmail.com', Array, Array, 'email')
+#7 C:\laragon\www\mynews\system\Controller.php(138): CodeIgniter\Validation\Validation->run()
+#8 C:\laragon\www\mynews\app\Controllers\AuthController.php(26): CodeIgniter\Controller->validate(Array)
+#9 C:\laragon\www\mynews\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#10 C:\laragon\www\mynews\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#11 C:\laragon\www\mynews\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\laragon\www\mynews\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\laragon\www\mynews\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\laragon\www\mynews\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\laragon\www\mynews\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#16 {main}
+CRITICAL - 2025-12-02 15:08:20 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user ''@'localhost' (using password: NO)
+[Method: POST, Route: api/registrasi]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `member`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('sss@gmail.com', 'member.email', [...])
+ 5 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('sss@gmail.com', 'member.email', [...], null, 'email')
+ 6 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'sss@gmail.com', [...], [...], 'email')
+ 7 SYSTEMPATH\Controller.php(138): CodeIgniter\Validation\Validation->run()
+ 8 APPPATH\Controllers\AuthController.php(26): CodeIgniter\Controller->validate([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\mynews\\public\\index.php')
+ERROR - 2025-12-02 15:08:22 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in C:\laragon\www\mynews\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\laragon\www\mynews\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', '', Object(SensitiveParameterValue), '', 3306, '', 0)
+#1 C:\laragon\www\mynews\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\laragon\www\mynews\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\laragon\www\mynews\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\laragon\www\mynews\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\mynews\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('sss@gmail.com', 'member.email', Array)
+#6 C:\laragon\www\mynews\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('sss@gmail.com', 'member.email', Array, NULL, 'email')
+#7 C:\laragon\www\mynews\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'sss@gmail.com', Array, Array, 'email')
+#8 C:\laragon\www\mynews\system\Controller.php(138): CodeIgniter\Validation\Validation->run()
+#9 C:\laragon\www\mynews\app\Controllers\AuthController.php(26): CodeIgniter\Controller->validate(Array)
+#10 C:\laragon\www\mynews\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#11 C:\laragon\www\mynews\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#12 C:\laragon\www\mynews\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\laragon\www\mynews\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#14 C:\laragon\www\mynews\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#15 C:\laragon\www\mynews\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#16 C:\laragon\www\mynews\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#17 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: NO) in C:\laragon\www\mynews\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\laragon\www\mynews\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\laragon\www\mynews\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\laragon\www\mynews\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 C:\laragon\www\mynews\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\laragon\www\mynews\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('sss@gmail.com', 'member.email', Array)
+#5 C:\laragon\www\mynews\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('sss@gmail.com', 'member.email', Array, NULL, 'email')
+#6 C:\laragon\www\mynews\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'sss@gmail.com', Array, Array, 'email')
+#7 C:\laragon\www\mynews\system\Controller.php(138): CodeIgniter\Validation\Validation->run()
+#8 C:\laragon\www\mynews\app\Controllers\AuthController.php(26): CodeIgniter\Controller->validate(Array)
+#9 C:\laragon\www\mynews\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#10 C:\laragon\www\mynews\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#11 C:\laragon\www\mynews\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\laragon\www\mynews\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\laragon\www\mynews\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\laragon\www\mynews\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\laragon\www\mynews\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#16 {main}
+CRITICAL - 2025-12-02 15:08:22 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user ''@'localhost' (using password: NO)
+[Method: POST, Route: api/registrasi]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `member`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('sss@gmail.com', 'member.email', [...])
+ 5 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('sss@gmail.com', 'member.email', [...], null, 'email')
+ 6 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'sss@gmail.com', [...], [...], 'email')
+ 7 SYSTEMPATH\Controller.php(138): CodeIgniter\Validation\Validation->run()
+ 8 APPPATH\Controllers\AuthController.php(26): CodeIgniter\Controller->validate([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\mynews\\public\\index.php')
+ERROR - 2025-12-02 15:08:24 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in C:\laragon\www\mynews\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\laragon\www\mynews\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', '', Object(SensitiveParameterValue), '', 3306, '', 0)
+#1 C:\laragon\www\mynews\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\laragon\www\mynews\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\laragon\www\mynews\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\laragon\www\mynews\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\mynews\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('sss@gmail.com', 'member.email', Array)
+#6 C:\laragon\www\mynews\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('sss@gmail.com', 'member.email', Array, NULL, 'email')
+#7 C:\laragon\www\mynews\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'sss@gmail.com', Array, Array, 'email')
+#8 C:\laragon\www\mynews\system\Controller.php(138): CodeIgniter\Validation\Validation->run()
+#9 C:\laragon\www\mynews\app\Controllers\AuthController.php(26): CodeIgniter\Controller->validate(Array)
+#10 C:\laragon\www\mynews\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#11 C:\laragon\www\mynews\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#12 C:\laragon\www\mynews\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\laragon\www\mynews\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#14 C:\laragon\www\mynews\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#15 C:\laragon\www\mynews\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#16 C:\laragon\www\mynews\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#17 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: NO) in C:\laragon\www\mynews\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\laragon\www\mynews\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\laragon\www\mynews\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\laragon\www\mynews\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 C:\laragon\www\mynews\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\laragon\www\mynews\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('sss@gmail.com', 'member.email', Array)
+#5 C:\laragon\www\mynews\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('sss@gmail.com', 'member.email', Array, NULL, 'email')
+#6 C:\laragon\www\mynews\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'sss@gmail.com', Array, Array, 'email')
+#7 C:\laragon\www\mynews\system\Controller.php(138): CodeIgniter\Validation\Validation->run()
+#8 C:\laragon\www\mynews\app\Controllers\AuthController.php(26): CodeIgniter\Controller->validate(Array)
+#9 C:\laragon\www\mynews\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#10 C:\laragon\www\mynews\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#11 C:\laragon\www\mynews\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\laragon\www\mynews\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\laragon\www\mynews\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\laragon\www\mynews\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\laragon\www\mynews\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#16 {main}
+CRITICAL - 2025-12-02 15:08:24 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user ''@'localhost' (using password: NO)
+[Method: POST, Route: api/registrasi]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `member`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('sss@gmail.com', 'member.email', [...])
+ 5 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('sss@gmail.com', 'member.email', [...], null, 'email')
+ 6 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'sss@gmail.com', [...], [...], 'email')
+ 7 SYSTEMPATH\Controller.php(138): CodeIgniter\Validation\Validation->run()
+ 8 APPPATH\Controllers\AuthController.php(26): CodeIgniter\Controller->validate([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\mynews\\public\\index.php')
+ERROR - 2025-12-02 15:08:24 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in C:\laragon\www\mynews\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\laragon\www\mynews\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', '', Object(SensitiveParameterValue), '', 3306, '', 0)
+#1 C:\laragon\www\mynews\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\laragon\www\mynews\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\laragon\www\mynews\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\laragon\www\mynews\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\mynews\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('sss@gmail.com', 'member.email', Array)
+#6 C:\laragon\www\mynews\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('sss@gmail.com', 'member.email', Array, NULL, 'email')
+#7 C:\laragon\www\mynews\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'sss@gmail.com', Array, Array, 'email')
+#8 C:\laragon\www\mynews\system\Controller.php(138): CodeIgniter\Validation\Validation->run()
+#9 C:\laragon\www\mynews\app\Controllers\AuthController.php(26): CodeIgniter\Controller->validate(Array)
+#10 C:\laragon\www\mynews\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#11 C:\laragon\www\mynews\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#12 C:\laragon\www\mynews\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\laragon\www\mynews\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#14 C:\laragon\www\mynews\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#15 C:\laragon\www\mynews\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#16 C:\laragon\www\mynews\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#17 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: NO) in C:\laragon\www\mynews\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\laragon\www\mynews\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\laragon\www\mynews\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\laragon\www\mynews\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 C:\laragon\www\mynews\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\laragon\www\mynews\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('sss@gmail.com', 'member.email', Array)
+#5 C:\laragon\www\mynews\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('sss@gmail.com', 'member.email', Array, NULL, 'email')
+#6 C:\laragon\www\mynews\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'sss@gmail.com', Array, Array, 'email')
+#7 C:\laragon\www\mynews\system\Controller.php(138): CodeIgniter\Validation\Validation->run()
+#8 C:\laragon\www\mynews\app\Controllers\AuthController.php(26): CodeIgniter\Controller->validate(Array)
+#9 C:\laragon\www\mynews\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#10 C:\laragon\www\mynews\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#11 C:\laragon\www\mynews\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\laragon\www\mynews\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\laragon\www\mynews\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\laragon\www\mynews\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\laragon\www\mynews\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#16 {main}
+CRITICAL - 2025-12-02 15:08:24 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user ''@'localhost' (using password: NO)
+[Method: POST, Route: api/registrasi]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `member`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('sss@gmail.com', 'member.email', [...])
+ 5 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('sss@gmail.com', 'member.email', [...], null, 'email')
+ 6 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'sss@gmail.com', [...], [...], 'email')
+ 7 SYSTEMPATH\Controller.php(138): CodeIgniter\Validation\Validation->run()
+ 8 APPPATH\Controllers\AuthController.php(26): CodeIgniter\Controller->validate([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\mynews\\public\\index.php')
+ERROR - 2025-12-02 15:08:25 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in C:\laragon\www\mynews\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\laragon\www\mynews\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', '', Object(SensitiveParameterValue), '', 3306, '', 0)
+#1 C:\laragon\www\mynews\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\laragon\www\mynews\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\laragon\www\mynews\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\laragon\www\mynews\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\mynews\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('sss@gmail.com', 'member.email', Array)
+#6 C:\laragon\www\mynews\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('sss@gmail.com', 'member.email', Array, NULL, 'email')
+#7 C:\laragon\www\mynews\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'sss@gmail.com', Array, Array, 'email')
+#8 C:\laragon\www\mynews\system\Controller.php(138): CodeIgniter\Validation\Validation->run()
+#9 C:\laragon\www\mynews\app\Controllers\AuthController.php(26): CodeIgniter\Controller->validate(Array)
+#10 C:\laragon\www\mynews\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#11 C:\laragon\www\mynews\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#12 C:\laragon\www\mynews\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\laragon\www\mynews\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#14 C:\laragon\www\mynews\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#15 C:\laragon\www\mynews\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#16 C:\laragon\www\mynews\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#17 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: NO) in C:\laragon\www\mynews\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\laragon\www\mynews\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\laragon\www\mynews\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\laragon\www\mynews\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 C:\laragon\www\mynews\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\laragon\www\mynews\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('sss@gmail.com', 'member.email', Array)
+#5 C:\laragon\www\mynews\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('sss@gmail.com', 'member.email', Array, NULL, 'email')
+#6 C:\laragon\www\mynews\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'sss@gmail.com', Array, Array, 'email')
+#7 C:\laragon\www\mynews\system\Controller.php(138): CodeIgniter\Validation\Validation->run()
+#8 C:\laragon\www\mynews\app\Controllers\AuthController.php(26): CodeIgniter\Controller->validate(Array)
+#9 C:\laragon\www\mynews\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#10 C:\laragon\www\mynews\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#11 C:\laragon\www\mynews\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\laragon\www\mynews\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\laragon\www\mynews\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\laragon\www\mynews\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\laragon\www\mynews\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#16 {main}
+CRITICAL - 2025-12-02 15:08:25 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user ''@'localhost' (using password: NO)
+[Method: POST, Route: api/registrasi]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `member`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('sss@gmail.com', 'member.email', [...])
+ 5 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('sss@gmail.com', 'member.email', [...], null, 'email')
+ 6 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'sss@gmail.com', [...], [...], 'email')
+ 7 SYSTEMPATH\Controller.php(138): CodeIgniter\Validation\Validation->run()
+ 8 APPPATH\Controllers\AuthController.php(26): CodeIgniter\Controller->validate([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\mynews\\public\\index.php')
+ERROR - 2025-12-02 15:08:43 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in C:\laragon\www\mynews\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\laragon\www\mynews\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', '', Object(SensitiveParameterValue), '', 3306, '', 0)
+#1 C:\laragon\www\mynews\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\laragon\www\mynews\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\laragon\www\mynews\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\laragon\www\mynews\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\mynews\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('sss@gmail.com', 'member.email', Array)
+#6 C:\laragon\www\mynews\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('sss@gmail.com', 'member.email', Array, NULL, 'email')
+#7 C:\laragon\www\mynews\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'sss@gmail.com', Array, Array, 'email')
+#8 C:\laragon\www\mynews\system\Controller.php(138): CodeIgniter\Validation\Validation->run()
+#9 C:\laragon\www\mynews\app\Controllers\AuthController.php(26): CodeIgniter\Controller->validate(Array)
+#10 C:\laragon\www\mynews\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#11 C:\laragon\www\mynews\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#12 C:\laragon\www\mynews\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\laragon\www\mynews\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#14 C:\laragon\www\mynews\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#15 C:\laragon\www\mynews\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#16 C:\laragon\www\mynews\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#17 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: NO) in C:\laragon\www\mynews\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\laragon\www\mynews\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\laragon\www\mynews\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\laragon\www\mynews\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 C:\laragon\www\mynews\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\laragon\www\mynews\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('sss@gmail.com', 'member.email', Array)
+#5 C:\laragon\www\mynews\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('sss@gmail.com', 'member.email', Array, NULL, 'email')
+#6 C:\laragon\www\mynews\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'sss@gmail.com', Array, Array, 'email')
+#7 C:\laragon\www\mynews\system\Controller.php(138): CodeIgniter\Validation\Validation->run()
+#8 C:\laragon\www\mynews\app\Controllers\AuthController.php(26): CodeIgniter\Controller->validate(Array)
+#9 C:\laragon\www\mynews\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#10 C:\laragon\www\mynews\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#11 C:\laragon\www\mynews\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\laragon\www\mynews\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\laragon\www\mynews\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\laragon\www\mynews\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\laragon\www\mynews\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#16 {main}
+CRITICAL - 2025-12-02 15:08:43 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user ''@'localhost' (using password: NO)
+[Method: POST, Route: api/registrasi]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `member`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('sss@gmail.com', 'member.email', [...])
+ 5 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('sss@gmail.com', 'member.email', [...], null, 'email')
+ 6 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'sss@gmail.com', [...], [...], 'email')
+ 7 SYSTEMPATH\Controller.php(138): CodeIgniter\Validation\Validation->run()
+ 8 APPPATH\Controllers\AuthController.php(26): CodeIgniter\Controller->validate([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\mynews\\public\\index.php')
+ERROR - 2025-12-02 15:08:48 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in C:\laragon\www\mynews\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\laragon\www\mynews\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', '', Object(SensitiveParameterValue), '', 3306, '', 0)
+#1 C:\laragon\www\mynews\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\laragon\www\mynews\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\laragon\www\mynews\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\laragon\www\mynews\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\mynews\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('sss@gmail.com', 'member.email', Array)
+#6 C:\laragon\www\mynews\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('sss@gmail.com', 'member.email', Array, NULL, 'email')
+#7 C:\laragon\www\mynews\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'sss@gmail.com', Array, Array, 'email')
+#8 C:\laragon\www\mynews\system\Controller.php(138): CodeIgniter\Validation\Validation->run()
+#9 C:\laragon\www\mynews\app\Controllers\AuthController.php(26): CodeIgniter\Controller->validate(Array)
+#10 C:\laragon\www\mynews\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#11 C:\laragon\www\mynews\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#12 C:\laragon\www\mynews\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\laragon\www\mynews\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#14 C:\laragon\www\mynews\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#15 C:\laragon\www\mynews\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#16 C:\laragon\www\mynews\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#17 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: NO) in C:\laragon\www\mynews\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\laragon\www\mynews\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\laragon\www\mynews\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\laragon\www\mynews\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 C:\laragon\www\mynews\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\laragon\www\mynews\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('sss@gmail.com', 'member.email', Array)
+#5 C:\laragon\www\mynews\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('sss@gmail.com', 'member.email', Array, NULL, 'email')
+#6 C:\laragon\www\mynews\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'sss@gmail.com', Array, Array, 'email')
+#7 C:\laragon\www\mynews\system\Controller.php(138): CodeIgniter\Validation\Validation->run()
+#8 C:\laragon\www\mynews\app\Controllers\AuthController.php(26): CodeIgniter\Controller->validate(Array)
+#9 C:\laragon\www\mynews\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#10 C:\laragon\www\mynews\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#11 C:\laragon\www\mynews\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\laragon\www\mynews\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\laragon\www\mynews\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\laragon\www\mynews\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\laragon\www\mynews\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#16 {main}
+CRITICAL - 2025-12-02 15:08:48 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user ''@'localhost' (using password: NO)
+[Method: POST, Route: api/registrasi]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `member`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('sss@gmail.com', 'member.email', [...])
+ 5 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('sss@gmail.com', 'member.email', [...], null, 'email')
+ 6 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'sss@gmail.com', [...], [...], 'email')
+ 7 SYSTEMPATH\Controller.php(138): CodeIgniter\Validation\Validation->run()
+ 8 APPPATH\Controllers\AuthController.php(26): CodeIgniter\Controller->validate([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\mynews\\public\\index.php')
+ERROR - 2025-12-02 15:08:57 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in C:\laragon\www\mynews\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\laragon\www\mynews\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', '', Object(SensitiveParameterValue), '', 3306, '', 0)
+#1 C:\laragon\www\mynews\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\laragon\www\mynews\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\laragon\www\mynews\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\laragon\www\mynews\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\mynews\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('sss@gmail.com', 'member.email', Array)
+#6 C:\laragon\www\mynews\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('sss@gmail.com', 'member.email', Array, NULL, 'email')
+#7 C:\laragon\www\mynews\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'sss@gmail.com', Array, Array, 'email')
+#8 C:\laragon\www\mynews\system\Controller.php(138): CodeIgniter\Validation\Validation->run()
+#9 C:\laragon\www\mynews\app\Controllers\AuthController.php(26): CodeIgniter\Controller->validate(Array)
+#10 C:\laragon\www\mynews\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#11 C:\laragon\www\mynews\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#12 C:\laragon\www\mynews\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\laragon\www\mynews\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#14 C:\laragon\www\mynews\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#15 C:\laragon\www\mynews\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#16 C:\laragon\www\mynews\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#17 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: NO) in C:\laragon\www\mynews\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\laragon\www\mynews\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\laragon\www\mynews\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\laragon\www\mynews\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 C:\laragon\www\mynews\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\laragon\www\mynews\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('sss@gmail.com', 'member.email', Array)
+#5 C:\laragon\www\mynews\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('sss@gmail.com', 'member.email', Array, NULL, 'email')
+#6 C:\laragon\www\mynews\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'sss@gmail.com', Array, Array, 'email')
+#7 C:\laragon\www\mynews\system\Controller.php(138): CodeIgniter\Validation\Validation->run()
+#8 C:\laragon\www\mynews\app\Controllers\AuthController.php(26): CodeIgniter\Controller->validate(Array)
+#9 C:\laragon\www\mynews\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#10 C:\laragon\www\mynews\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#11 C:\laragon\www\mynews\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\laragon\www\mynews\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\laragon\www\mynews\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\laragon\www\mynews\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\laragon\www\mynews\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#16 {main}
+CRITICAL - 2025-12-02 15:08:57 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user ''@'localhost' (using password: NO)
+[Method: POST, Route: api/registrasi]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `member`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('sss@gmail.com', 'member.email', [...])
+ 5 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('sss@gmail.com', 'member.email', [...], null, 'email')
+ 6 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'sss@gmail.com', [...], [...], 'email')
+ 7 SYSTEMPATH\Controller.php(138): CodeIgniter\Validation\Validation->run()
+ 8 APPPATH\Controllers\AuthController.php(26): CodeIgniter\Controller->validate([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\mynews\\public\\index.php')
+ERROR - 2025-12-02 15:08:58 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in C:\laragon\www\mynews\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\laragon\www\mynews\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', '', Object(SensitiveParameterValue), '', 3306, '', 0)
+#1 C:\laragon\www\mynews\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\laragon\www\mynews\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\laragon\www\mynews\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\laragon\www\mynews\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\mynews\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('sss@gmail.com', 'member.email', Array)
+#6 C:\laragon\www\mynews\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('sss@gmail.com', 'member.email', Array, NULL, 'email')
+#7 C:\laragon\www\mynews\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'sss@gmail.com', Array, Array, 'email')
+#8 C:\laragon\www\mynews\system\Controller.php(138): CodeIgniter\Validation\Validation->run()
+#9 C:\laragon\www\mynews\app\Controllers\AuthController.php(26): CodeIgniter\Controller->validate(Array)
+#10 C:\laragon\www\mynews\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#11 C:\laragon\www\mynews\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#12 C:\laragon\www\mynews\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\laragon\www\mynews\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#14 C:\laragon\www\mynews\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#15 C:\laragon\www\mynews\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#16 C:\laragon\www\mynews\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#17 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: NO) in C:\laragon\www\mynews\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\laragon\www\mynews\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\laragon\www\mynews\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\laragon\www\mynews\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 C:\laragon\www\mynews\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\laragon\www\mynews\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('sss@gmail.com', 'member.email', Array)
+#5 C:\laragon\www\mynews\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('sss@gmail.com', 'member.email', Array, NULL, 'email')
+#6 C:\laragon\www\mynews\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'sss@gmail.com', Array, Array, 'email')
+#7 C:\laragon\www\mynews\system\Controller.php(138): CodeIgniter\Validation\Validation->run()
+#8 C:\laragon\www\mynews\app\Controllers\AuthController.php(26): CodeIgniter\Controller->validate(Array)
+#9 C:\laragon\www\mynews\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#10 C:\laragon\www\mynews\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#11 C:\laragon\www\mynews\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\laragon\www\mynews\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\laragon\www\mynews\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\laragon\www\mynews\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\laragon\www\mynews\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#16 {main}
+CRITICAL - 2025-12-02 15:08:58 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user ''@'localhost' (using password: NO)
+[Method: POST, Route: api/registrasi]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `member`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('sss@gmail.com', 'member.email', [...])
+ 5 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('sss@gmail.com', 'member.email', [...], null, 'email')
+ 6 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'sss@gmail.com', [...], [...], 'email')
+ 7 SYSTEMPATH\Controller.php(138): CodeIgniter\Validation\Validation->run()
+ 8 APPPATH\Controllers\AuthController.php(26): CodeIgniter\Controller->validate([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\mynews\\public\\index.php')
+ERROR - 2025-12-02 15:11:53 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in C:\laragon\www\mynews\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\laragon\www\mynews\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', '', Object(SensitiveParameterValue), '', 3306, '', 0)
+#1 C:\laragon\www\mynews\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\laragon\www\mynews\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\laragon\www\mynews\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\laragon\www\mynews\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\mynews\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('sss@gmail.com', 'member.email', Array)
+#6 C:\laragon\www\mynews\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('sss@gmail.com', 'member.email', Array, NULL, 'email')
+#7 C:\laragon\www\mynews\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'sss@gmail.com', Array, Array, 'email')
+#8 C:\laragon\www\mynews\system\Controller.php(138): CodeIgniter\Validation\Validation->run()
+#9 C:\laragon\www\mynews\app\Controllers\AuthController.php(26): CodeIgniter\Controller->validate(Array)
+#10 C:\laragon\www\mynews\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#11 C:\laragon\www\mynews\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#12 C:\laragon\www\mynews\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\laragon\www\mynews\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#14 C:\laragon\www\mynews\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#15 C:\laragon\www\mynews\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#16 C:\laragon\www\mynews\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#17 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: NO) in C:\laragon\www\mynews\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\laragon\www\mynews\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\laragon\www\mynews\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\laragon\www\mynews\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 C:\laragon\www\mynews\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\laragon\www\mynews\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('sss@gmail.com', 'member.email', Array)
+#5 C:\laragon\www\mynews\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('sss@gmail.com', 'member.email', Array, NULL, 'email')
+#6 C:\laragon\www\mynews\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'sss@gmail.com', Array, Array, 'email')
+#7 C:\laragon\www\mynews\system\Controller.php(138): CodeIgniter\Validation\Validation->run()
+#8 C:\laragon\www\mynews\app\Controllers\AuthController.php(26): CodeIgniter\Controller->validate(Array)
+#9 C:\laragon\www\mynews\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#10 C:\laragon\www\mynews\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#11 C:\laragon\www\mynews\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\laragon\www\mynews\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\laragon\www\mynews\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\laragon\www\mynews\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\laragon\www\mynews\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#16 {main}
+CRITICAL - 2025-12-02 15:11:53 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user ''@'localhost' (using password: NO)
+[Method: POST, Route: api/registrasi]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `member`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('sss@gmail.com', 'member.email', [...])
+ 5 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('sss@gmail.com', 'member.email', [...], null, 'email')
+ 6 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'sss@gmail.com', [...], [...], 'email')
+ 7 SYSTEMPATH\Controller.php(138): CodeIgniter\Validation\Validation->run()
+ 8 APPPATH\Controllers\AuthController.php(26): CodeIgniter\Controller->validate([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\mynews\\public\\index.php')
+ERROR - 2025-12-02 15:15:12 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'mynews' in C:\laragon\www\mynews\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\laragon\www\mynews\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'mynews', 3306, '', 0)
+#1 C:\laragon\www\mynews\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\laragon\www\mynews\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\laragon\www\mynews\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\laragon\www\mynews\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\mynews\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('sss@gmail.com', 'member.email', Array)
+#6 C:\laragon\www\mynews\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('sss@gmail.com', 'member.email', Array, NULL, 'email')
+#7 C:\laragon\www\mynews\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'sss@gmail.com', Array, Array, 'email')
+#8 C:\laragon\www\mynews\system\Controller.php(138): CodeIgniter\Validation\Validation->run()
+#9 C:\laragon\www\mynews\app\Controllers\AuthController.php(26): CodeIgniter\Controller->validate(Array)
+#10 C:\laragon\www\mynews\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#11 C:\laragon\www\mynews\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#12 C:\laragon\www\mynews\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\laragon\www\mynews\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#14 C:\laragon\www\mynews\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#15 C:\laragon\www\mynews\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#16 C:\laragon\www\mynews\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#17 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'mynews' in C:\laragon\www\mynews\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\laragon\www\mynews\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\laragon\www\mynews\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\laragon\www\mynews\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 C:\laragon\www\mynews\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\laragon\www\mynews\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('sss@gmail.com', 'member.email', Array)
+#5 C:\laragon\www\mynews\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('sss@gmail.com', 'member.email', Array, NULL, 'email')
+#6 C:\laragon\www\mynews\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'sss@gmail.com', Array, Array, 'email')
+#7 C:\laragon\www\mynews\system\Controller.php(138): CodeIgniter\Validation\Validation->run()
+#8 C:\laragon\www\mynews\app\Controllers\AuthController.php(26): CodeIgniter\Controller->validate(Array)
+#9 C:\laragon\www\mynews\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#10 C:\laragon\www\mynews\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#11 C:\laragon\www\mynews\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\laragon\www\mynews\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\laragon\www\mynews\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\laragon\www\mynews\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\laragon\www\mynews\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#16 {main}
+CRITICAL - 2025-12-02 15:15:12 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'mynews'
+[Method: POST, Route: api/registrasi]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `member`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('sss@gmail.com', 'member.email', [...])
+ 5 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('sss@gmail.com', 'member.email', [...], null, 'email')
+ 6 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'sss@gmail.com', [...], [...], 'email')
+ 7 SYSTEMPATH\Controller.php(138): CodeIgniter\Validation\Validation->run()
+ 8 APPPATH\Controllers\AuthController.php(26): CodeIgniter\Controller->validate([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\mynews\\public\\index.php')
+ERROR - 2025-12-02 15:15:15 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'mynews' in C:\laragon\www\mynews\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\laragon\www\mynews\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'mynews', 3306, '', 0)
+#1 C:\laragon\www\mynews\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\laragon\www\mynews\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\laragon\www\mynews\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\laragon\www\mynews\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\mynews\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('sss@gmail.com', 'member.email', Array)
+#6 C:\laragon\www\mynews\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('sss@gmail.com', 'member.email', Array, NULL, 'email')
+#7 C:\laragon\www\mynews\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'sss@gmail.com', Array, Array, 'email')
+#8 C:\laragon\www\mynews\system\Controller.php(138): CodeIgniter\Validation\Validation->run()
+#9 C:\laragon\www\mynews\app\Controllers\AuthController.php(26): CodeIgniter\Controller->validate(Array)
+#10 C:\laragon\www\mynews\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#11 C:\laragon\www\mynews\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#12 C:\laragon\www\mynews\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\laragon\www\mynews\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#14 C:\laragon\www\mynews\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#15 C:\laragon\www\mynews\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#16 C:\laragon\www\mynews\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#17 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'mynews' in C:\laragon\www\mynews\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\laragon\www\mynews\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\laragon\www\mynews\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\laragon\www\mynews\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 C:\laragon\www\mynews\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\laragon\www\mynews\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('sss@gmail.com', 'member.email', Array)
+#5 C:\laragon\www\mynews\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('sss@gmail.com', 'member.email', Array, NULL, 'email')
+#6 C:\laragon\www\mynews\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'sss@gmail.com', Array, Array, 'email')
+#7 C:\laragon\www\mynews\system\Controller.php(138): CodeIgniter\Validation\Validation->run()
+#8 C:\laragon\www\mynews\app\Controllers\AuthController.php(26): CodeIgniter\Controller->validate(Array)
+#9 C:\laragon\www\mynews\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#10 C:\laragon\www\mynews\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#11 C:\laragon\www\mynews\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\laragon\www\mynews\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\laragon\www\mynews\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\laragon\www\mynews\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\laragon\www\mynews\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#16 {main}
+CRITICAL - 2025-12-02 15:15:15 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'mynews'
+[Method: POST, Route: api/registrasi]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `member`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('sss@gmail.com', 'member.email', [...])
+ 5 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('sss@gmail.com', 'member.email', [...], null, 'email')
+ 6 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'sss@gmail.com', [...], [...], 'email')
+ 7 SYSTEMPATH\Controller.php(138): CodeIgniter\Validation\Validation->run()
+ 8 APPPATH\Controllers\AuthController.php(26): CodeIgniter\Controller->validate([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\mynews\\public\\index.php')
+ERROR - 2025-12-02 15:16:10 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'mynews' in C:\laragon\www\mynews\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\laragon\www\mynews\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'mynews', 3306, '', 0)
+#1 C:\laragon\www\mynews\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\laragon\www\mynews\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\laragon\www\mynews\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\laragon\www\mynews\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\mynews\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('sdad@gmail.com', 'member.email', Array)
+#6 C:\laragon\www\mynews\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('sdad@gmail.com', 'member.email', Array, NULL, 'email')
+#7 C:\laragon\www\mynews\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'sdad@gmail.com', Array, Array, 'email')
+#8 C:\laragon\www\mynews\system\Controller.php(138): CodeIgniter\Validation\Validation->run()
+#9 C:\laragon\www\mynews\app\Controllers\AuthController.php(26): CodeIgniter\Controller->validate(Array)
+#10 C:\laragon\www\mynews\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#11 C:\laragon\www\mynews\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#12 C:\laragon\www\mynews\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\laragon\www\mynews\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#14 C:\laragon\www\mynews\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#15 C:\laragon\www\mynews\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#16 C:\laragon\www\mynews\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#17 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'mynews' in C:\laragon\www\mynews\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\laragon\www\mynews\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\laragon\www\mynews\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\laragon\www\mynews\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 C:\laragon\www\mynews\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\laragon\www\mynews\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('sdad@gmail.com', 'member.email', Array)
+#5 C:\laragon\www\mynews\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('sdad@gmail.com', 'member.email', Array, NULL, 'email')
+#6 C:\laragon\www\mynews\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'sdad@gmail.com', Array, Array, 'email')
+#7 C:\laragon\www\mynews\system\Controller.php(138): CodeIgniter\Validation\Validation->run()
+#8 C:\laragon\www\mynews\app\Controllers\AuthController.php(26): CodeIgniter\Controller->validate(Array)
+#9 C:\laragon\www\mynews\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#10 C:\laragon\www\mynews\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#11 C:\laragon\www\mynews\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\laragon\www\mynews\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\laragon\www\mynews\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\laragon\www\mynews\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\laragon\www\mynews\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#16 {main}
+CRITICAL - 2025-12-02 15:16:10 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'mynews'
+[Method: POST, Route: api/registrasi]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `member`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('sdad@gmail.com', 'member.email', [...])
+ 5 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('sdad@gmail.com', 'member.email', [...], null, 'email')
+ 6 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'sdad@gmail.com', [...], [...], 'email')
+ 7 SYSTEMPATH\Controller.php(138): CodeIgniter\Validation\Validation->run()
+ 8 APPPATH\Controllers\AuthController.php(26): CodeIgniter\Controller->validate([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\mynews\\public\\index.php')
+CRITICAL - 2025-12-02 15:16:37 --> CodeIgniter\Exceptions\ConfigException: Invalid DBDriver name: "MySQL"
+[Method: POST, Route: api/registrasi]
+in SYSTEMPATH\Database\Database.php on line 172.
+ 1 SYSTEMPATH\Database\Database.php(59): CodeIgniter\Database\Database->checkDbExtension('MySQL')
+ 2 SYSTEMPATH\Database\Config.php(82): CodeIgniter\Database\Database->load([...], 'default')
+ 3 SYSTEMPATH\Validation\Rules.php(210): CodeIgniter\Database\Config::connect('default')
+ 4 SYSTEMPATH\Validation\Rules.php(165): CodeIgniter\Validation\Rules->prepareUniqueQuery('sdad@gmail.com', 'email', [...])
+ 5 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('sdad@gmail.com', 'member.email', [...])
+ 6 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('sdad@gmail.com', 'member.email', [...], null, 'email')
+ 7 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'sdad@gmail.com', [...], [...], 'email')
+ 8 SYSTEMPATH\Controller.php(138): CodeIgniter\Validation\Validation->run()
+ 9 APPPATH\Controllers\AuthController.php(26): CodeIgniter\Controller->validate([...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\mynews\\public\\index.php')
+ERROR - 2025-12-02 15:17:53 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'mynews' in C:\laragon\www\mynews\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\laragon\www\mynews\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'mynews', 3306, '', 0)
+#1 C:\laragon\www\mynews\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\laragon\www\mynews\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\laragon\www\mynews\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\laragon\www\mynews\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\mynews\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('sdad@gmail.com', 'member.email', Array)
+#6 C:\laragon\www\mynews\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('sdad@gmail.com', 'member.email', Array, NULL, 'email')
+#7 C:\laragon\www\mynews\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'sdad@gmail.com', Array, Array, 'email')
+#8 C:\laragon\www\mynews\system\Controller.php(138): CodeIgniter\Validation\Validation->run()
+#9 C:\laragon\www\mynews\app\Controllers\AuthController.php(26): CodeIgniter\Controller->validate(Array)
+#10 C:\laragon\www\mynews\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#11 C:\laragon\www\mynews\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#12 C:\laragon\www\mynews\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\laragon\www\mynews\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#14 C:\laragon\www\mynews\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#15 C:\laragon\www\mynews\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#16 C:\laragon\www\mynews\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#17 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'mynews' in C:\laragon\www\mynews\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\laragon\www\mynews\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\laragon\www\mynews\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\laragon\www\mynews\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 C:\laragon\www\mynews\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\laragon\www\mynews\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('sdad@gmail.com', 'member.email', Array)
+#5 C:\laragon\www\mynews\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('sdad@gmail.com', 'member.email', Array, NULL, 'email')
+#6 C:\laragon\www\mynews\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'sdad@gmail.com', Array, Array, 'email')
+#7 C:\laragon\www\mynews\system\Controller.php(138): CodeIgniter\Validation\Validation->run()
+#8 C:\laragon\www\mynews\app\Controllers\AuthController.php(26): CodeIgniter\Controller->validate(Array)
+#9 C:\laragon\www\mynews\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#10 C:\laragon\www\mynews\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#11 C:\laragon\www\mynews\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\laragon\www\mynews\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\laragon\www\mynews\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\laragon\www\mynews\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\laragon\www\mynews\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#16 {main}
+CRITICAL - 2025-12-02 15:17:53 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'mynews'
+[Method: POST, Route: api/registrasi]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `member`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('sdad@gmail.com', 'member.email', [...])
+ 5 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('sdad@gmail.com', 'member.email', [...], null, 'email')
+ 6 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'sdad@gmail.com', [...], [...], 'email')
+ 7 SYSTEMPATH\Controller.php(138): CodeIgniter\Validation\Validation->run()
+ 8 APPPATH\Controllers\AuthController.php(26): CodeIgniter\Controller->validate([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\mynews\\public\\index.php')
+CRITICAL - 2025-12-02 15:18:38 --> CodeIgniter\Validation\Exceptions\ValidationException: "min_length(6)" is not a valid rule.
+[Method: POST, Route: api/registrasi]
+in SYSTEMPATH\Validation\Validation.php on line 345.
+ 1 SYSTEMPATH\Validation\Validation.php(345): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('min_length(6)')
+ 2 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('password', 'password', 'asdfghjkl', [...], [...], 'password')
+ 3 SYSTEMPATH\Controller.php(138): CodeIgniter\Validation\Validation->run()
+ 4 APPPATH\Controllers\AuthController.php(26): CodeIgniter\Controller->validate([...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\mynews\\public\\index.php')
+CRITICAL - 2025-12-02 15:20:00 --> CodeIgniter\Validation\Exceptions\ValidationException: "min_length,6" is not a valid rule.
+[Method: POST, Route: api/registrasi]
+in SYSTEMPATH\Validation\Validation.php on line 345.
+ 1 SYSTEMPATH\Validation\Validation.php(345): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('min_length,6')
+ 2 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('password', 'password', 'asdfghjkl', [...], [...], 'password')
+ 3 SYSTEMPATH\Controller.php(138): CodeIgniter\Validation\Validation->run()
+ 4 APPPATH\Controllers\AuthController.php(26): CodeIgniter\Controller->validate([...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\mynews\\public\\index.php')
+CRITICAL - 2025-12-02 18:45:14 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+[Method: POST, Route: api/profile/photo]
+in SYSTEMPATH\BaseModel.php on line 1008.
+ 1 SYSTEMPATH\BaseModel.php(1008): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(860): CodeIgniter\BaseModel->update([...], [])
+ 3 APPPATH\Controllers\ProfileController.php(109): CodeIgniter\Model->update('6', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProfileController->uploadPhoto()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProfileController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\mynews\\public\\index.php')
+CRITICAL - 2025-12-02 18:45:21 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+[Method: POST, Route: api/profile/photo]
+in SYSTEMPATH\BaseModel.php on line 1008.
+ 1 SYSTEMPATH\BaseModel.php(1008): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(860): CodeIgniter\BaseModel->update([...], [])
+ 3 APPPATH\Controllers\ProfileController.php(109): CodeIgniter\Model->update('6', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProfileController->uploadPhoto()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProfileController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\mynews\\public\\index.php')
+CRITICAL - 2025-12-02 18:45:24 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+[Method: POST, Route: api/profile/photo]
+in SYSTEMPATH\BaseModel.php on line 1008.
+ 1 SYSTEMPATH\BaseModel.php(1008): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(860): CodeIgniter\BaseModel->update([...], [])
+ 3 APPPATH\Controllers\ProfileController.php(109): CodeIgniter\Model->update('6', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProfileController->uploadPhoto()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProfileController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\mynews\\public\\index.php')
+CRITICAL - 2025-12-02 18:45:26 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+[Method: POST, Route: api/profile/photo]
+in SYSTEMPATH\BaseModel.php on line 1008.
+ 1 SYSTEMPATH\BaseModel.php(1008): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(860): CodeIgniter\BaseModel->update([...], [])
+ 3 APPPATH\Controllers\ProfileController.php(109): CodeIgniter\Model->update('6', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProfileController->uploadPhoto()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProfileController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\mynews\\public\\index.php')
+CRITICAL - 2025-12-02 18:45:39 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+[Method: POST, Route: api/profile/photo]
+in SYSTEMPATH\BaseModel.php on line 1008.
+ 1 SYSTEMPATH\BaseModel.php(1008): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(860): CodeIgniter\BaseModel->update([...], [])
+ 3 APPPATH\Controllers\ProfileController.php(109): CodeIgniter\Model->update('6', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProfileController->uploadPhoto()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProfileController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\mynews\\public\\index.php')
+CRITICAL - 2025-12-02 18:49:09 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+[Method: POST, Route: api/profile/photo]
+in SYSTEMPATH\BaseModel.php on line 1008.
+ 1 SYSTEMPATH\BaseModel.php(1008): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(860): CodeIgniter\BaseModel->update([...], [])
+ 3 APPPATH\Controllers\ProfileController.php(109): CodeIgniter\Model->update('6', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProfileController->uploadPhoto()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProfileController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\mynews\\public\\index.php')
+CRITICAL - 2025-12-02 18:51:06 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+[Method: POST, Route: api/profile/photo]
+in SYSTEMPATH\BaseModel.php on line 1008.
+ 1 SYSTEMPATH\BaseModel.php(1008): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(860): CodeIgniter\BaseModel->update([...], [])
+ 3 APPPATH\Controllers\ProfileController.php(109): CodeIgniter\Model->update('6', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProfileController->uploadPhoto()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProfileController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\mynews\\public\\index.php')
+CRITICAL - 2025-12-02 18:52:04 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+[Method: POST, Route: api/profile/photo]
+in SYSTEMPATH\BaseModel.php on line 1008.
+ 1 SYSTEMPATH\BaseModel.php(1008): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(860): CodeIgniter\BaseModel->update([...], [])
+ 3 APPPATH\Controllers\ProfileController.php(109): CodeIgniter\Model->update('6', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProfileController->uploadPhoto()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProfileController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\mynews\\public\\index.php')
+CRITICAL - 2025-12-02 18:53:08 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+[Method: POST, Route: api/profile/photo]
+in SYSTEMPATH\BaseModel.php on line 1008.
+ 1 SYSTEMPATH\BaseModel.php(1008): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(860): CodeIgniter\BaseModel->update([...], [])
+ 3 APPPATH\Controllers\ProfileController.php(109): CodeIgniter\Model->update('6', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProfileController->uploadPhoto()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProfileController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\mynews\\public\\index.php')
+CRITICAL - 2025-12-02 18:55:25 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+[Method: POST, Route: api/profile/photo]
+in SYSTEMPATH\BaseModel.php on line 1008.
+ 1 SYSTEMPATH\BaseModel.php(1008): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(860): CodeIgniter\BaseModel->update([...], [])
+ 3 APPPATH\Controllers\ProfileController.php(109): CodeIgniter\Model->update('6', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProfileController->uploadPhoto()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProfileController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\mynews\\public\\index.php')
+CRITICAL - 2025-12-02 18:57:54 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+[Method: POST, Route: api/profile/photo]
+in SYSTEMPATH\BaseModel.php on line 1008.
+ 1 SYSTEMPATH\BaseModel.php(1008): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(860): CodeIgniter\BaseModel->update([...], [])
+ 3 APPPATH\Controllers\ProfileController.php(109): CodeIgniter\Model->update('6', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProfileController->uploadPhoto()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProfileController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\mynews\\public\\index.php')
+CRITICAL - 2025-12-02 18:58:35 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+[Method: POST, Route: api/profile/photo]
+in SYSTEMPATH\BaseModel.php on line 1008.
+ 1 SYSTEMPATH\BaseModel.php(1008): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(860): CodeIgniter\BaseModel->update([...], [])
+ 3 APPPATH\Controllers\ProfileController.php(109): CodeIgniter\Model->update('6', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProfileController->uploadPhoto()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProfileController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\mynews\\public\\index.php')
